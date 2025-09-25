@@ -7,8 +7,12 @@ import (
 	"github.com/pdfcpu/pdfcpu/pkg/api"
 )
 
-func ListMetadata() error {
-	inFile := os.Getenv("INPUT_FILE")
+func ListMetadata(inputFile string) error {
+	if inputFile == "" {
+		inputFile = os.Getenv("INPUT_FILE")
+	}
+
+	inFile := inputFile
 	if inFile == "" {
 		return fmt.Errorf("INPUT_FILE env is required")
 	}

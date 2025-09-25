@@ -30,7 +30,7 @@ func main() {
 
 	switch cmd {
 	case "list":
-		err = usecase.ListMetadata()
+		err = usecase.ListMetadata("")
 	case "update":
 		err = usecase.UpdateMetadata()
 	case "remove":

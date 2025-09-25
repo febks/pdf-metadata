@@ -49,5 +49,9 @@ func UpdateMetadata() error {
 		return fmt.Errorf("error writing pdf: %v", err)
 	}
 	fmt.Println("✅ Metadata updated ->", outFile)
+
+	if err := ListMetadata(outFile); err != nil {
+		return fmt.Errorf("error listing metadata: %v", err)
+	}
 	return nil
 }
